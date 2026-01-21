@@ -1,3 +1,13 @@
+  <?php
+ /**
+  * About section
+  *
+  * @package doctorappointment
+  */
+
+ function doctorappintment_about_section_shortcode() {
+ob_start();
+ ?>
  <!-- About Section -->
     <section class="w-[1366px] px-[187px] pt-[60px] pb-[68px]">
         <!-- heading -->
@@ -27,17 +37,19 @@
         </div>
 
         <div
-            class="relative  mt-11 bg-[url('../src/images/abouthome.png')] bg-cover bg-center w-full h-[250px] flex items-center  mx-auto">
-
+            class="relative  mt-11 bg-cover bg-center w-full h-[250px] flex items-center  mx-auto" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/abouthome.png');?">
             <!-- Frame -->
             <div class="absolute inset-0">
-                <img src="./src/images/Frame 2.png" alt="Frame" class="w-full h-full  object-cover" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Frame 2.png" alt="Frame" class="w-full h-full object-cover" />
             </div>
 
             <!-- Divider (bottom) -->
             <div class="absolute bottom-0 left-0 w-full">
-                <img src="./src/images/divider.png" alt="Divider" class="w-full object-contain">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/divider.png" alt="Divider" class="w-full object-contain">
             </div>
-
         </div>
-    </section>
+</section>
+<?php
+return ob_get_clean();
+ }
+ add_shortcode( 'about-section', 'doctorappintment_about_section_shortcode' );

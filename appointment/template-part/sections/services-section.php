@@ -1,4 +1,14 @@
-  <!-- Services Section -->
+<?php
+
+/**
+ * Services Section
+ * 
+ * @package doctorappointment
+ */
+function doctorappintment_services_section_shortcode()
+{
+    ob_start();
+?>
     <section class="w-[1366px] flex flex-col gap-2 px-[187px] -mt-2 pb-[68px]">
         <!-- heading -->
         <div class="heading flex flex-col items-center justify-center gap-0">
@@ -77,7 +87,6 @@
                 </ul>
             </div>
 
-
             <!-- center content-->
             <div class="center py-6 w-[470px] flex flex-col">
                 <h2 class="text-black font-worksans text-[26px] font-medium leading-normal">
@@ -144,21 +153,24 @@
             <div class="right-images flex flex-col gap-5 mt-0.5">
 
                 <div class="first-img relative w-[324px] h-[231.339px]">
-                    <img src="./src/images/servicehome1.png" alt="" class="w-full h-full object-cover">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/servicehome1.png" alt="" class="w-full h-full object-cover">
                     <!-- Divider (bottom) -->
                     <div class="absolute bottom-0 left-0 w-full">
-                        <img src="./src/images/servicedivider.png" alt="Divider" class="w-full object-contain">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/servicedivider.png" alt="Divider" class="w-full object-contain">
                     </div>
                 </div>
                 <div class="second-img relative w-[324px] h-[231.339px]">
-                    <img src="./src/images/servicehome2.png" alt="" class="w-full h-full object-cover">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/servicehome2.png" alt="" class="w-full h-full object-cover">
                     <!-- Divider (bottom) -->
                     <div class="absolute bottom-0 left-0 w-full">
-                        <img src="./src/images/servicedivider.png" alt="Divider" class="w-full object-contain">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/servicedivider.png" alt="Divider" class="w-full object-contain">
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
+<?php
+    return ob_get_clean();
+}
+add_shortcode('services-section', 'doctorappintment_services_section_shortcode')
+?>

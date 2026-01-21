@@ -1,3 +1,12 @@
+<?php
+/**
+ * Hero inner section
+ * 
+ * @package doctorappointment
+ */
+function doctorappintment_hero_inner_section_shortcode() {
+    ob_start();
+?>
 <!-- hero inner card -->
     <section class="relative w-[1366px] px-[187px] flex gap-5 items-center -mt-12 z-40">
 
@@ -97,3 +106,8 @@
         </div>
 
     </section>
+<?php
+return ob_get_clean();
+}
+add_shortcode( 'hero-inner-section', 'doctorappintment_hero_inner_section_shortcode' );
+?>

@@ -1,3 +1,12 @@
+<?php
+/**
+ * Contact Section
+ * 
+ * @package doctorappointment
+ */
+function doctorappintment_contact_section_shortcode(){
+ob_start();
+?>
 <section class="w-[1366px] px-[187px] pt-[56px] pb-[66px] flex flex-col gap-14">
     <!-- heading -->
     <div class="heading flex flex-col gap-0 justify-center items-center">
@@ -157,3 +166,8 @@
     </div>
 
 </section>
+<?php
+return ob_get_clean();
+}
+add_shortcode( 'contact-section','doctorappintment_contact_section_shortcode' )
+?>
