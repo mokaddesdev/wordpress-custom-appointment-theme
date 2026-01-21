@@ -18,7 +18,7 @@
                 <a href="../news/news.php" class="hover:text-red-600">News</a>
             </li>
             <li>
-                <a href="../contact/contact.php" class="hover:text-red-600">Contact</a>
+                <a href="../contact/contact.php" class="hover:text-red-600">Contact us</a>
             </li>
         </ul>
     </nav>
