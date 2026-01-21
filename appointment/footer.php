@@ -16,7 +16,7 @@
             <ul class="flex flex-col gap-2 text-[#FCFEFE] font-worksans text-[16px] not-italic font-normal leading-[140%]">
                 <li><a href="#" class="text-[#FCFEFE]">Appointment</a></li>
                 <li><a href="#" class="text-[#FCFEFE]">Doctors</a></li>
-                <li><a href="#" class="text-[#FCFEFE]">Services</a></li>
+                <li><a href="#" class="text-[#FCFEFE]">Our Services</a></li>
                 <li><a href="#" class="text-[#FCFEFE]">About Us</a></li>
             </ul>
 
