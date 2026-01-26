@@ -24,3 +24,7 @@ require_once get_template_directory() . '/template-part/content/sub-header-bread
 require_once get_template_directory() . '/inc/cpt/services.php';
 require_once get_template_directory() . '/inc/cpt/doctors.php';
 require_once get_template_directory() . '/inc/cpt/testimonials.php';
+require_once get_template_directory() . '/inc/taxonomy/services-category.php';
+require_once get_template_directory() . '/inc/taxonomy/doctors-category.php';
+
+require_once get_template_directory() . '/inc/customizer/contact-info.php';

@@ -30,7 +30,7 @@ function doctorappintment_register_services_cpt() {
         'show_ui'            => true,
         'show_in_menu'       => true,
         'menu_position'      => 16,
-        'menu_icon'          => '',
+        'menu_icon'          => 'dashicons-admin-tools',
         'query_var'          => true,
         'rewrite'            => array( 'slug' => 'services' ),
         'capability_type'    => 'post',

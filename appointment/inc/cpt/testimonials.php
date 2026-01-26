@@ -30,7 +30,7 @@ function doctorappintment_register_testimonials_cpt() {
         'show_ui'            => true,
         'show_in_menu'       => true,
         'menu_position'      => 12,
-        'menu_icon'          => '',
+        'menu_icon'          => 'dashicons-testimonial',
         'query_var'          => true,
         'rewrite'            => array( 'slug' => 'testimonials' ),
         'capability_type'    => 'post',

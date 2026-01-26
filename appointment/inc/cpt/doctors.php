@@ -30,7 +30,7 @@ function doctorappintment_register_doctors_cpt() {
         'show_ui'            => true,
         'show_in_menu'       => true,
         'menu_position'      => 14,
-        'menu_icon'          => '',
+        'menu_icon'          => 'dashicons-businessperson',
         'query_var'          => true,
         'rewrite'            => array( 'slug' => 'doctors' ),
         'capability_type'    => 'post',
