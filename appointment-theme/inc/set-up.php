@@ -6,7 +6,7 @@
  */
 function doctorappointment_setup_theme() {
     add_theme_support( 'post-thumbnails' );
-    add_theme_support( 'custom-log', array(
+    add_theme_support( 'custom-logo', array(
         'height' => 40,
         'weight' => 80,
     ) );
