@@ -2,7 +2,7 @@
 /**
  * Theme Functions
  * 
- * @package doctorappointment
+ * @package appointment
  */
 require_once get_template_directory() . '/inc/enqueue.php';
 require_once get_template_directory() . '/inc/set-up.php';

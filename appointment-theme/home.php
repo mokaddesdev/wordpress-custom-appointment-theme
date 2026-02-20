@@ -1,6 +1,6 @@
 <?php
 /**
- * Design for blog post page
+ * blog post page template file
  * 
  * @package doctorappintment
  */
