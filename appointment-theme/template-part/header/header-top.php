@@ -1,8 +1,8 @@
 <?php
 /**
- * Header Section
+ * Header Top
  * 
- * @package doctorappointment
+ * @package appointment
  */
 ?>
 <section class="flex items-center justify-between gap-6 w-[1366px] mx-auto h-[80px] px-[187px] pt-[12px] pb-[8px]">
