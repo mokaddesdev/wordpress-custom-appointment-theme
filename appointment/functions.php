@@ -1,9 +1,22 @@
 <?php
+// use Appointment_Theme\Inc\Classes\Appointment_Theme;
 /**
  * Theme Functions
  * 
  * @package appointment
  */
+if ( ! defined('APPOINTMENT_DIR_PATH') ) {
+    define('APPOINTMENT_DIR_PATH', untrailingslashit( get_template_directory() ) );
+}
+
+require_once APPOINTMENT_DIR_PATH . '/inc/helpers/autoloader.php';
+// var_dump( spl_autoload_functions() );
+// die();
+function appointment_get_theme_instance() {
+    Appointment_Theme\Inc\Classes\Appointment_Theme::get_instance();
+}
+appointment_get_theme_instance();
+
 require_once get_template_directory() . '/inc/enqueue.php';
 require_once get_template_directory() . '/inc/set-up.php';
 require_once get_template_directory() . '/template-part/sections/hero-section.php';
