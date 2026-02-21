@@ -81,14 +81,19 @@ trait Say_World {
     }
 }
 
+trait TimeTracker() {
+    public function say_time() {
+        echo "Current time is 2.00PM";
+    }
+}
+
 class Teacher{
     public function say_name() {
         echo 'Teacher';
     }
 }
-
 class Base extends Teacher {
-    use Say_World;
+    use Say_World, TimeTracker;
     public function_construct() {
         //
     }
@@ -97,4 +102,91 @@ class Base extends Teacher {
 $base = new Base();
 $base->say_hello();
 $base->say_name();
+```
+## Singleton
+```php
+<?php
+// Singleton create only one instance object 
+class Signleton{
+
+    private static $instance = null;
+
+    private function __construct() {
+        //
+    }
+
+    public static function get_instance() {
+        if( static::$instance === null ) {
+            static::$instance = new static();
+        }
+        return static::$instance;
+    }
+
+    private function __clone(){
+        //
+    }
+
+    private function __wakeup() {
+        //
+    }
+}
+
+// create object
+$object = Singleton::get_instance();
+$anotherObj = Singleton::get_instance();
+var_dump( $object == $anotherObj );
+?>
+```
+
+## Singleton and Traits
+```php
+<?php
+trait Signleton{
+
+    private static $instances = [];
+
+    private final function __construct() {
+        //
+    }
+
+    public static function get_instance() {
+        static $instances = [];
+        $called_class = get_called_class();
+
+        if( ! isset( $instances[ $called_class ] ) ) {
+            $instances[ $called_class ] = new $called_class;
+        }
+        return $instances[ $called_class ];
+    }
+
+    private final function __clone(){
+        //
+    }
+
+    private final function __wakeup() {
+        //
+    }
+}
+
+//User
+include_once('Singleton.php');
+class User{
+    use Singleton;
+    public function construct() {
+        echo 'User';
+    }
+}
+$user_one = User::get_instance();
+
+//Person
+include_once('Singleton.php');
+class Person{
+    use Singleton;
+    public function construct() {
+        echo 'Person';
+    }
+}
+$person_one = Person::get_instance();
+
+
 ```
