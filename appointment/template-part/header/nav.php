@@ -1,13 +1,26 @@
 <?php
+
+use Appointment_Theme\Inc\Classes\Menus;
 /**
  * Nav header
  * 
  * @package appointment
  */
+$menu_class = Menus::get_instance();
+$header_menu_id = $menu_class->get_menu_id('header_menu');
+$header_menus = wp_get_nav_menu_items( $header_menu_id );
 ?>
 
  <nav class="flex gap-5 items-center text-[18px] not-italic font-normal leading-normal text-[#FCFEFE] font-worksans">
             <?php
+            if ( ! empty( $header_menus ) && is_array( $header_menus ) ) :
+                ?>
+                <ul>
+                    <?php foreach( $header_menus as $menu_item ) : ?>
+                </ul>
+            <?php
+            endforeach;
+            endif;
             wp_nav_menu( array(
                 'theme_location' => 'header_menu',
                  'menu_class'     => 'custom-nav flex gap-5 items-center','container'      => false,
