@@ -7,10 +7,15 @@ class Appointment_Theme {
     use Singleton;
 
     protected function __construct() {
-        $this->set_hooks();
+        $this->setup_classes();
     }
 
-    protected function set_hooks() {
-        // actions and filters
+    protected function setup_classes() {
+        /**
+         * Classes
+         */
+        Enqueue::get_instance();
+        Theme_Support::get_instance();
+        Register_Menu::get_instance();
     }
 }

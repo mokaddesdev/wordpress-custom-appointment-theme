@@ -8,7 +8,13 @@
 <section class="flex items-center justify-between gap-6 w-[1366px] mx-auto h-[80px] px-[187px] pt-[12px] pb-[8px]">
     <!-- logo -->
     <div class="w-[210px] h-[30px]">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Meddical.png" alt="Logo" class="">
+        <a href="#">
+        <?php
+        if ( function_exists( 'the_custom_logo') ) {
+            the_custom_logo();
+        }
+        ?>
+        </a>
     </div>
     <!-- contact info -->
     <div class="flex items-center gap-[11px]">
