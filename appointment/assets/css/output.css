@@ -11,6 +11,8 @@
       "Courier New", monospace;
     --color-red-600: oklch(57.7% 0.245 27.325);
     --color-red-800: oklch(44.4% 0.177 26.899);
+    --color-amber-300: oklch(87.9% 0.169 91.605);
+    --color-amber-600: oklch(66.6% 0.179 58.318);
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-pink-300: oklch(82.3% 0.12 346.018);
@@ -195,8 +197,14 @@
   .absolute {
     position: absolute;
   }
+  .fixed {
+    position: fixed;
+  }
   .relative {
     position: relative;
+  }
+  .static {
+    position: static;
   }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
@@ -1016,6 +1024,9 @@
   .text-white {
     color: var(--color-white);
   }
+  .lowercase {
+    text-transform: lowercase;
+  }
   .uppercase {
     text-transform: uppercase;
   }
@@ -1186,6 +1197,105 @@
       outline-style: none;
     }
   }
+}
+.navbar {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>');
+}
+.appontment-menus {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 5);
+}
+.appontment-menus li {
+  position: relative;
+}
+.appontment-menus li:hover {
+  background-color: var(--color-amber-300);
+  color: var(--color-black);
+}
+.appontment-menus li ul {
+  visibility: hidden;
+  position: absolute;
+  z-index: 50;
+  width: calc(var(--spacing) * 44);
+  background-color: var(--color-black);
+  padding-inline: calc(var(--spacing) * 4);
+  padding-block: calc(var(--spacing) * 5);
+  opacity: 0%;
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+.appontment-menus li:hover > ul {
+  visibility: visible;
+  background-color: var(--color-amber-300);
+  color: var(--color-black);
+  opacity: 100%;
+}
+.appontment-menus li ul a {
+  display: block;
+  padding-inline: calc(var(--spacing) * 2);
+  padding-block: calc(var(--spacing) * 1);
+  color: var(--color-white);
+}
+.appontment-menus li ul a:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+.appontment-menus li ul ul {
+  visibility: hidden;
+  top: calc(var(--spacing) * 0);
+  left: 100%;
+  margin-left: calc(var(--spacing) * 6);
+  --tw-translate-y: calc(var(--spacing) * 3);
+  translate: var(--tw-translate-x) var(--tw-translate-y);
+  opacity: 0%;
+  transition-property: all;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 700ms;
+  transition-duration: 700ms;
+  --tw-ease: var(--ease-in-out);
+  transition-timing-function: var(--ease-in-out);
+}
+.appontment-menus li ul li:hover > ul {
+  visibility: visible;
+  --tw-translate-y: calc(var(--spacing) * 0);
+  translate: var(--tw-translate-x) var(--tw-translate-y);
+  opacity: 100%;
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
+}
+.appontment-menus li:hover ul li:hover {
+  background-color: var(--color-black);
+  color: var(--color-amber-600);
+}
+.appontment-menus li.menu-item-has-children > a {
+  position: relative;
+  padding-right: calc(var(--spacing) * 6);
+}
+.appontment-menus li.menu-item-has-children > a::after {
+  content: "";
+  position: absolute;
+  top: calc(1 / 2 * 100%);
+  right: calc(var(--spacing) * 0);
+  height: calc(var(--spacing) * 4);
+  width: calc(var(--spacing) * 4);
+  --tw-translate-y: calc(calc(1 / 2 * 100%) * -1);
+  translate: var(--tw-translate-x) var(--tw-translate-y);
+  transition-property: transform, translate, scale, rotate;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
+  --tw-ease: var(--ease-in-out);
+  transition-timing-function: var(--ease-in-out);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ffffff' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 8.25l-7.5 7.5-7.5-7.5'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.appontment-menus li.menu-item-has-children:hover > a::after {
+  rotate: 180deg;
 }
 @property --tw-translate-x {
   syntax: "*";
