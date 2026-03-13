@@ -28,9 +28,44 @@ class Menus{
     }
 
     public function get_menu_id( $location ) {
+        // Get all the locations
         $locations = get_nav_menu_locations();
-        //? get menu id
+        // Get menu id
         $menu_id = $locations[ $location ];
-        return ( ! empty( $menu_id ) )? $menu_id : '';
+        return ( ! empty( $menu_id ) ) ? $menu_id : '';
     }
+
+    public function get_child_menu_items( $menu_array, $parent_id ) {
+        $child_menus = [];
+
+        if ( ! empty( $menu_array ) && is_array( $menu_array ) ) {
+            foreach( $menu_array as $menu ) {
+                if ( intval( $menu->menu_item_parent ) === intval( $parent_id ) ) {
+                    array_push( $child_menus, $menu );
+                }
+            }
+        }
+        return $child_menus;
+    }
+
+  public function get_grand_child_menu_items( $menus, $parent_id ) {
+
+    $grand_childs = [];
+
+    if ( ! empty( $menus ) && is_array( $menus ) ) {
+
+        foreach ( $menus as $menu ) {
+
+            if ( intval( $menu->menu_item_parent ) === intval( $parent_id ) ) {
+
+                $grand_childs[] = $menu;
+
+            }
+
+        }
+
+    }
+
+    return $grand_childs;
+}
 }
