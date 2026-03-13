@@ -21,7 +21,14 @@ class Theme_Support{
     public function theme_supports() {
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
-// add_theme_support( 'post-thumbnails', array( 'post', 'movie' ) ); // Posts and Movies
+
+    /**
+     * Custom theme image support
+     */
+    add_image_size( 'featured-image', 350, 233, true );
+
+/**
+ *  */ add_theme_support( 'post-thumbnails', array( 'post', 'movie' ) ); // Posts and Movies
     add_theme_support( 'custom-logo', array(
         'header_text'  => array( 'site_title', 'site_description' ),
         'height'       => 30,

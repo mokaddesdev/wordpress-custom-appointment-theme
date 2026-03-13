@@ -17,5 +17,6 @@ class Appointment_Theme {
         Enqueue::get_instance();
         Theme_Support::get_instance();
         Menus::get_instance();
+        Meta_Boxes::get_instance();
     }
 }

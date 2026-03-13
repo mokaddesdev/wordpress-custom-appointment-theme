@@ -18,6 +18,7 @@ function appointment_get_theme_instance() {
     Appointment_Theme\Inc\Classes\Appointment_Theme::get_instance();
 }
 appointment_get_theme_instance();
+require_once APPOINTMENT_DIR_PATH . '/inc/helpers/template-tags.php';
 
 require_once get_template_directory() . '/template-part/sections/hero-section.php';
 require_once get_template_directory() . '/template-part/sections/about-section.php';

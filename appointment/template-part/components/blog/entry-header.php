@@ -10,7 +10,17 @@ $post_thumbnail = get_the_post_thumbnail( $post_id );
 <header class="entry-header">
     <?php if ( $post_thumbnail ) : ?>
         <div class="entry-image">
-            <a href="<?php get_permalink(); ?>">
+            <a href="<?php echo esc_url( get_permalink() ); ?>">
+                <?php
+                the_post_custom_thumbnail(
+                    $the_post_id,
+                    'featured-thumbnail',
+                    [
+                        'sizes' => '{max-width: 350px} 350px, 233px',
+                        'class' => 'attachment-featured-large size-fetured-image'
+                    ]
+                )
+                ?>
                 <img src="" alt="">
             </a>
         </div>
