@@ -1,8 +1,6 @@
 ## Build theme from scratch
 ## ESNext for JavaScript
-## Babel
 ## Sass
-## Webpack
 ## OOP
 ## Singleton
 ## PHP Classes
